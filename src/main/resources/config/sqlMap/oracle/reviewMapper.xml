@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="product.dao.ReviewDAO">
+
+    <select id="selectListByProduct" parameterType="map" resultType="reviewVO">
+        SELECT review_id as reviewId
+             , product_id as productId
+             , nickname
+             , review_date as reviewDate
+             , rating
+             , skin_tone as skinTone
+             , skin_type as skinType
+             , skin_raw as skinRaw
+             , satisfaction
+             , purchase_option as purchaseOption
+             , review_text as reviewText
+             , helpful
+             , sentiment
+          FROM t_review
+         WHERE product_id = #{productId}
+         ORDER BY review_id DESC
+         OFFSET #{offset} ROWS FETCH NEXT #{limit} ROWS ONLY
+    </select>
+
+    <select id="selectCountByProduct" parameterType="int" resultType="int">
+        SELECT COUNT(*)
+          FROM t_review
+         WHERE product_id = #{productId}
+    </select>
+
+</mapper>
