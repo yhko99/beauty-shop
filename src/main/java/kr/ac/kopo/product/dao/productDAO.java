@@ -12,6 +12,15 @@ public interface ProductDAO {
     // 상품 상세 조회
     ProductVO selectOne(int productId);
 
-    // 상품 전체 건수 조회 (페이징용)
+    // 상품 전체 건수 조회
     int selectCount(Map<String, Object> params);
+
+    // 상품 추가
+    int insert(ProductVO productVO);
+
+    // 상품 수정
+    int update(ProductVO productVO);
+
+    // 상품 삭제
+    int delete(int productId);
 }

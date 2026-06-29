@@ -20,28 +20,38 @@ public class ProductService {
     @Autowired
     private ReviewDAO reviewDAO;
 
-    // 상품 목록 조회
     public List<ProductVO> selectList(Map<String, Object> params) {
         return productDAO.selectList(params);
     }
 
-    // 상품 상세 조회
     public ProductVO selectOne(int productId) {
         return productDAO.selectOne(productId);
     }
 
-    // 상품 전체 건수
     public int selectCount(Map<String, Object> params) {
         return productDAO.selectCount(params);
     }
 
-    // 상품별 리뷰 목록
     public List<ReviewVO> selectReviewList(Map<String, Object> params) {
         return reviewDAO.selectListByProduct(params);
     }
 
-    // 상품별 리뷰 건수
     public int selectReviewCount(int productId) {
         return reviewDAO.selectCountByProduct(productId);
+    }
+
+    // 상품 추가
+    public int insert(ProductVO productVO) {
+        return productDAO.insert(productVO);
+    }
+
+    // 상품 수정
+    public int update(ProductVO productVO) {
+        return productDAO.update(productVO);
+    }
+
+    // 상품 삭제
+    public int delete(int productId) {
+        return productDAO.delete(productId);
     }
 }

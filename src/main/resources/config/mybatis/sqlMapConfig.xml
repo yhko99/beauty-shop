@@ -7,5 +7,6 @@
     <typeAliases>
         <typeAlias type="kr.ac.kopo.product.vo.ProductVO" alias="productVO"/>
         <typeAlias type="kr.ac.kopo.product.vo.ReviewVO" alias="reviewVO"/>
+        <typeAlias type="kr.ac.kopo.product.vo.MemberVO" alias="memberVO"/>
     </typeAliases>
 </configuration>

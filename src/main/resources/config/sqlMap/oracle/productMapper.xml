@@ -54,4 +54,25 @@
         </if>
     </select>
 
+    <insert id="insert" parameterType="productVO">
+        INSERT INTO t_product (product_id, product_name, brand_name, price, original_price, discount_rate, product_url)
+        VALUES (#{productId}, #{productName}, #{brandName}, #{price}, #{originalPrice}, #{discountRate}, #{productUrl})
+    </insert>
+
+    <update id="update" parameterType="productVO">
+        UPDATE t_product
+           SET product_name   = #{productName}
+             , brand_name     = #{brandName}
+             , price          = #{price}
+             , original_price = #{originalPrice}
+             , discount_rate  = #{discountRate}
+             , product_url    = #{productUrl}
+         WHERE product_id = #{productId}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM t_product
+         WHERE product_id = #{productId}
+    </delete>
+
 </mapper>

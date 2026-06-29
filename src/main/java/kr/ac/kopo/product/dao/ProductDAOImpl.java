@@ -29,4 +29,19 @@ public class ProductDAOImpl implements ProductDAO {
     public int selectCount(Map<String, Object> params) {
         return sqlSessionTemplate.selectOne("product.dao.ProductDAO.selectCount", params);
     }
+
+    @Override
+    public int insert(ProductVO productVO) {
+        return sqlSessionTemplate.insert("product.dao.ProductDAO.insert", productVO);
+    }
+
+    @Override
+    public int update(ProductVO productVO) {
+        return sqlSessionTemplate.update("product.dao.ProductDAO.update", productVO);
+    }
+
+    @Override
+    public int delete(int productId) {
+        return sqlSessionTemplate.delete("product.dao.ProductDAO.delete", productId);
+    }
 }
