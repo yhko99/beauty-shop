@@ -6,6 +6,7 @@ public class MemberVO {
     private String memberPw;
     private String memberName;
     private String memberEmail;
+    private String faceDescriptor;
 
     public MemberVO() {}
 
@@ -20,6 +21,9 @@ public class MemberVO {
 
     public String getMemberEmail() { return memberEmail; }
     public void setMemberEmail(String memberEmail) { this.memberEmail = memberEmail; }
+
+    public String getFaceDescriptor() { return faceDescriptor; }
+    public void setFaceDescriptor(String faceDescriptor) { this.faceDescriptor = faceDescriptor; }
 
     @Override
     public String toString() {

@@ -13,9 +13,9 @@
 
     <!-- 로그인 -->
     <select id="selectOne" parameterType="memberVO" resultType="memberVO">
-        SELECT member_id   as memberId
-             , member_pw   as memberPw
-             , member_name as memberName
+        SELECT member_id    as memberId
+             , member_pw    as memberPw
+             , member_name  as memberName
              , member_email as memberEmail
           FROM t_member
          WHERE member_id = #{memberId}
@@ -27,6 +27,32 @@
         SELECT COUNT(*)
           FROM t_member
          WHERE member_id = #{memberId}
+    </select>
+
+    <!-- 얼굴 데이터 저장 -->
+    <update id="updateFaceDescriptor" parameterType="memberVO">
+        UPDATE t_member
+           SET face_descriptor = #{faceDescriptor}
+         WHERE member_id = #{memberId}
+    </update>
+
+    <!-- 얼굴로 회원 찾기 -->
+    <select id="selectByFace" parameterType="String" resultType="memberVO">
+        SELECT member_id    as memberId
+             , member_name  as memberName
+             , member_email as memberEmail
+             , face_descriptor as faceDescriptor
+          FROM t_member
+         WHERE member_id = #{memberId}
+    </select>
+
+    <!-- 전체 회원 얼굴 데이터 조회 -->
+    <select id="selectAllFace" resultType="memberVO">
+        SELECT member_id    as memberId
+             , member_name  as memberName
+             , face_descriptor as faceDescriptor
+          FROM t_member
+         WHERE face_descriptor IS NOT NULL
     </select>
 
 </mapper>

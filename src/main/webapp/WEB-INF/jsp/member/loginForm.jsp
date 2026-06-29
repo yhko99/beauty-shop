@@ -11,8 +11,10 @@
         .form-box input { width: 100%; padding: 8px; margin: 5px 0 15px 0; box-sizing: border-box; border: 1px solid #ddd; border-radius: 4px; }
         .form-box button { width: 100%; padding: 10px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 15px; }
         .form-box button:hover { background: #555; }
+        .face-btn { width: 100%; padding: 10px; background: #47a; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 15px; margin-top: 10px; }
+        .face-btn:hover { background: #369; }
         .link { margin-top: 15px; text-align: center; }
-        .link a { color: #333; }
+        .link a { color: #333; margin: 0 10px; }
     </style>
 </head>
 <body>
@@ -25,6 +27,9 @@
             <input type="password" name="memberPw" placeholder="비밀번호 입력" required>
             <button type="submit">로그인</button>
         </form>
+        <button class="face-btn" onclick="location.href='/beauty-shop/member/faceLoginForm'">
+            📷 얼굴로 로그인
+        </button>
         <div class="link">
             <a href="/beauty-shop/member/joinForm">계정이 없으신가요? 회원가입</a>
         </div>

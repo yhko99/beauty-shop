@@ -37,6 +37,7 @@
             <c:choose>
                 <c:when test="${not empty sessionScope.loginMember}">
                     <span>${sessionScope.loginMember.memberName}님 환영합니다!</span>
+                    <a href="/beauty-shop/member/faceRegist">📷 얼굴 등록</a>
                     <a href="/beauty-shop/member/logout">로그아웃</a>
                 </c:when>
                 <c:otherwise>
